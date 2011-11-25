@@ -29,30 +29,88 @@ define ('PHP_URL_PASS', 4);
 define ('PHP_URL_PATH', 5);
 define ('PHP_URL_QUERY', 6);
 define ('PHP_URL_FRAGMENT', 7);
+
+/**
+ * <i>e</i> constant
+ */
 define ('M_E', 2.718281828459);
+/**
+ * {@link log}<sub>2</sub><i>e</i> constant
+ */
 define ('M_LOG2E', 1.442695040889);
+/**
+ * {@link log}<sub>10</sub><i>e</i> constant
+ */
 define ('M_LOG10E', 0.43429448190325);
+/**
+ * {@link log}<sub><i>e</i></sub>2 constant
+ */
 define ('M_LN2', 0.69314718055995);
+/**
+ * {@link log}<sub><i>e</i></sub>10 constant
+ */
 define ('M_LN10', 2.302585092994);
+/**
+ * &pi; constant
+ */
+define ('M_PI', 3.1415926535898);
+/**
+ * &pi;/2 constant
+ */
+define ('M_PI_2', 1.5707963267949);
+/**
+ * &pi;/4 constant
+ */
+define ('M_PI_4', 0.78539816339745);
+/**
+ * 1/&pi; constant
+ */
+define ('M_1_PI', 0.31830988618379);
+/**
+ * 2/&pi; constant
+ */
+define ('M_2_PI', 0.63661977236758);
+/**
+ * {@link sqrt}(&pi;) constant
+ */
+define ('M_SQRTPI', 1.7724538509055);
+/**
+ * 2/{@link sqrt}(&pi;) constant
+ */
+define ('M_2_SQRTPI', 1.1283791670955);
+/**
+ * {@link log}<sub><i>e</i></sub>&pi; constant
+ */
+define ('M_LNPI', 1.1447298858494);
+/**
+ * Euler constant
+ */
+define ('M_EULER', 0.57721566490153);
+/**
+ * {@link sqrt}(2) constant
+ */
+define ('M_SQRT2', 1.4142135623731);
+/**
+ * 1/{@link sqrt}(2) constant
+ */
+define ('M_SQRT1_2', 0.70710678118655);
+/**
+ * {@link sqrt}(3) constant
+ */
+define ('M_SQRT3', 1.7320508075689);
+/**
+ * The infinite
+ */
+define ('INF', INF);
+/**
+ * Not A Number
+ */
+define ('NAN', NAN);
 
 /**
  * Round halves up [5.3.0]
  * @link http://php.net/manual/en/math.constants.php
  */
-define ('M_PI', 3.1415926535898);
-define ('M_PI_2', 1.5707963267949);
-define ('M_PI_4', 0.78539816339745);
-define ('M_1_PI', 0.31830988618379);
-define ('M_2_PI', 0.63661977236758);
-define ('M_SQRTPI', 1.7724538509055);
-define ('M_2_SQRTPI', 1.1283791670955);
-define ('M_LNPI', 1.1447298858494);
-define ('M_EULER', 0.57721566490153);
-define ('M_SQRT2', 1.4142135623731);
-define ('M_SQRT1_2', 0.70710678118655);
-define ('M_SQRT3', 1.7320508075689);
-define ('INF', INF);
-define ('NAN', NAN);
 define ('PHP_ROUND_HALF_UP', 1);
 
 /**

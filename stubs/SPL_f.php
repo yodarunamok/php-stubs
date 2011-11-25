@@ -49,11 +49,15 @@ function spl_autoload_extensions ($file_extensions = null) {}
  * @param callback $autoload_function [optional] <p>
  * The autoload function being registered.
  * If no parameter is provided, then the default implementation of
- * spl_autoload will be registered. 
+ * spl_autoload will be registered.
  * </p>
+ * @param bool $throw This parameter specifies whether spl_autoload_register() should throw exceptions when the
+ * autoload_function cannot be registered.
+ * @param bool $prepend If true, spl_autoload_register() will prepend the autoloader on the autoload stack instead of
+ * appending it. 
  * @return bool Returns true on success or false on failure.
  */
-function spl_autoload_register ($autoload_function = null) {}
+function spl_autoload_register ($autoload_function = null, $throw = true, $prepend = false) {}
 
 /**
  * (PHP 5 &gt;= 5.1.2)<br/>

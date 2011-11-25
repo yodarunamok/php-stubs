@@ -8,20 +8,6 @@
 function strtr (string $str, array $replace_pairs) {};
 
 /**
- * (PHP 4, PHP 5)<br/>
- * Join array elements with a string
- * @link http://php.net/manual/en/function.implode.php
- * </p>
- * @param array $pieces <p>
- * The array of strings to implode.
- * </p>
- * @return string a string containing a string representation of all the array
- * elements in the same order, with the glue string between each element.
- */
-function implode (array $pieces ) {}
-
-
-/**
  * (PHP 5.1)<br/>
  * Halts the execution of the compiler. This can be useful to embed data in PHP scripts, like the installation files.
  * Byte position of the data start can be determined by the __COMPILER_HALT_OFFSET__ constant

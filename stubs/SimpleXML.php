@@ -8,12 +8,25 @@
  */
 class SimpleXMLElement implements Traversable {
 
-	/**
-	 * (PHP 5 &gt;= 5.0.1)<br/>
-	 * Creates a new SimpleXMLElement object
-	 * @link http://php.net/manual/en/simplexmlelement.construct.php
-	 */
-	final public function __construct (string $data, int $options = 0, bool $data_is_url = false, string $ns = "", bool $is_prefix = false) {}
+    /**
+     * (PHP 5 &gt;= 5.0.1)<br/>
+     * Creates a new SimpleXMLElement object
+     * @link http://php.net/manual/en/simplexmlelement.construct.php
+     * @param string $data A well-formed XML string or the path or URL to an XML document if data_is_url is TRUE.
+     * @param int $options Optionally used to specify additional Libxml parameters.
+     * @param bool $data_is_url By default, data_is_url is FALSE.
+     * Use TRUE to specify that data is a path or URL to an XML document instead of string data.
+     * @param string $ns Namespace prefix or URI.
+     * @param bool $is_prefix TRUE if ns is a prefix, FALSE if it's a URI; defaults to FALSE.
+     */
+	final public function __construct ($data, $options = 0, $data_is_url = false, $ns = "", $is_prefix = false) {}
+
+    /**
+     * Provides access to element's children
+     * @param $name child name
+     * @return SimpleXMLElement[]
+     */
+    function __get($name) {}
 
 	/**
 	 * (PHP 5 &gt;= 5.0.1)<br/>

@@ -105,7 +105,9 @@ function floor ($value) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Rounds a float
+ * Returns the rounded value of val to specified precision (number of digits after the decimal point).
+ * precision can also be negative or zero (default).
+ * Note: PHP doesn't handle strings like "12,300.2" correctly by default. See converting from strings.
  * @link http://php.net/manual/en/function.round.php
  * @param float $val <p>
  * The value to round
@@ -121,7 +123,7 @@ function floor ($value) {}
  * </p>
  * @return float The rounded value
  */
-function round ($val, $precision = null, $mode = null) {}
+function round ($val, $precision = 0, $mode = PHP_ROUND_HALF_UP) {}
 
 /**
  * (PHP 4, PHP 5)<br/>

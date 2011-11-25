@@ -796,7 +796,7 @@ function fputs ($fp, $str, $length) {}
 
 /**
  * (PHP 4, PHP 5)<br/>
- * Makes directory
+ * Attempts to create the directory specified by pathname.
  * @link http://php.net/manual/en/function.mkdir.php
  * @param string $pathname <p>
  * The directory path.
@@ -813,15 +813,15 @@ function fputs ($fp, $str, $length) {}
  * Note that you probably want to specify the mode as an octal number,
  * which means it should have a leading zero. The mode is also modified
  * by the current umask, which you can change using
- * umask.
+ * umask().
  * </p>
  * @param bool $recursive [optional] <p>
- * Default to false.
+ * Allows the creation of nested directories specified in the pathname. Default to false.
  * </p>
  * @param resource $context [optional] &note.context-support;
  * @return bool Returns true on success or false on failure.
  */
-function mkdir ($pathname, $mode = null, $recursive = null, $context = null) {}
+function mkdir ($pathname, $mode = 0777, $recursive = false, $context = null) {}
 
 /**
  * (PHP 4, PHP 5)<br/>

@@ -4147,7 +4147,7 @@ interface SplObserver  {
          * </p>
          * @return void 
          */
-        public function update ($subject);
+        public function update (SplSubject $subject);
 
 }
 
@@ -4167,7 +4167,7 @@ interface SplSubject  {
          * </p>
          * @return void 
          */
-        public function attach ($observer);
+        public function attach (SplObserver $observer);
 
         /**
          * (PHP 5 &gt;= 5.1.0)<br/>
@@ -4178,7 +4178,7 @@ interface SplSubject  {
          * </p>
          * @return void 
          */
-        public function detach ($observer);
+        public function detach (SplObserver $observer);
 
         /**
          * (PHP 5 &gt;= 5.1.0)<br/>

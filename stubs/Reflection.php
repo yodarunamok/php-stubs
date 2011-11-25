@@ -1986,15 +1986,16 @@ class ReflectionProperty implements Reflector {
 	 * (PHP 5)<br/>
 	 * Set property value
 	 * @link http://php.net/manual/en/reflectionproperty.setvalue.php
-	 * @param object $object <p>
-	 * The object name.
+	 * @param object $object [optional]<p>
+	 * If the property is non-static an object must be provided to change the property on.
+     * If the property is static this parameter is left out and only value needs to be provided.
 	 * </p>
 	 * @param mixed $value <p>
 	 * The new value.
 	 * </p>
 	 * @return void 
 	 */
-	public function setValue ($object, $value) {}
+	public function setValue ($object = null, $value) {}
 
 	/**
 	 * (PHP 5)<br/>

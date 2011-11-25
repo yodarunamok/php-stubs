@@ -2,6 +2,8 @@
 
 // Start of curl v.
 
+//TODO: copy proper descriptions for all constants from http://us.php.net/manual/en/function.curl-setopt.php
+
 define ('CURLOPT_IPRESOLVE', 113);
 define ('CURL_IPRESOLVE_WHATEVER', 0);
 define ('CURL_IPRESOLVE_V4', 1);
@@ -32,6 +34,19 @@ define ('CURLOPT_POST', 47);
 define ('CURLOPT_FTPLISTONLY', 48);
 define ('CURLOPT_FTPAPPEND', 50);
 define ('CURLOPT_NETRC', 51);
+
+/**
+ * Available since PHP 5.3.2
+ * @link http://us.php.net/manual/en/function.curl-setopt.php
+ */
+define ('CURLOPT_CERTINFO', -1);
+define ('CURLOPT_FTPASCII', -1);
+define ('CURLOPT_MUTE', -1);
+define ('CURLOPT_PROTOCOLS', -1);
+define ('CURLOPT_REDIR_PROTOCOLS', -1);
+define ('CURLOPT_MAX_RECV_SPEED_LARGE', -1);
+define ('CURLOPT_MAX_SEND_SPEED_LARGE', -1);
+define ('CURLOPT_PASSWDFUNCTION', -1);
 
 /**
  * This constant is not available when open_basedir 

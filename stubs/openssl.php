@@ -894,19 +894,22 @@ function openssl_dh_compute_key ($pub_key, $dh_key) {}
 
 /**
  * (PHP 5 &gt;= 5.3.0)<br/>
- * Generate a pseudo-random string
+ * Generates a string of pseudo-random bytes, with the number of bytes determined by the length parameter.
+ * <p>It also indicates if a cryptographically strong algorithm was used to produce the pseudo-random bytes,
+ * and does this via the optional crypto_strong parameter. It's rare for this to be FALSE, but some systems may be broken or old.
  * @link http://php.net/manual/en/function.openssl-random-pseudo-bytes.php
  * @param string $length <p>
  * The length of the desired string. Must be a positive integer. PHP will
  * try to cast this parameter to a non-null integer to use it. 
  * </p>
- * @param string $strong <p>
- * If a strong algorithm was used, or not, as a boolean.
- * This parameter will be &null; if an error occurrs.
+ * @param bool $crypto_strong [optional]<p>
+ * If passed into the function, this will hold a boolean value that determines
+ * if the algorithm used was "cryptographically strong",
+ * e.g., safe for usage with GPG, passwords, etc. TRUE if it did, otherwise FALSE
  * </p>
  * @return bool the generated &string; in case of success, &return.falseforfailure;.
  */
-function openssl_random_pseudo_bytes ($length, $strong) {}
+function openssl_random_pseudo_bytes ($length, &$crypto_strong) {}
 
 /**
  * (PHP 4 &gt;= 4.0.6, PHP 5)<br/>

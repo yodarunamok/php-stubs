@@ -1,199 +1,357 @@
 <?php
 
-// Start of memcache v.3.0.4
+// Start of memcache v.3.0.6
 
 class MemcachePool  {
 
-	public function connect () {}
+    public function connect () {}
 
-	public function addserver () {}
+    public function addserver () {}
 
-	public function setserverparams () {}
+    public function setserverparams () {}
 
-	public function setfailurecallback () {}
+    public function setfailurecallback () {}
 
-	public function getserverstatus () {}
+    public function getserverstatus () {}
 
-	public function getversion () {}
+    public function findserver () {}
 
-	public function add () {}
+    public function getversion () {}
 
-	public function set () {}
+    public function add () {}
 
-	public function replace () {}
+    public function set () {}
 
-	public function cas () {}
+    public function replace () {}
 
-	public function append () {}
+    public function cas () {}
 
-	public function prepend () {}
+    public function append () {}
 
-	public function get () {}
+    public function prepend () {}
 
-	public function delete () {}
+    public function get () {}
 
-	public function getstats () {}
+    public function delete () {}
 
-	public function getextendedstats () {}
+    public function getstats () {}
 
-	public function setcompressthreshold () {}
+    public function getextendedstats () {}
 
-	public function increment () {}
+    public function setcompressthreshold () {}
 
-	public function decrement () {}
+    public function increment () {}
 
-	public function close () {}
+    public function decrement () {}
 
-	public function flush () {}
+    public function close () {}
+
+    public function flush () {}
 
 }
 
+/**
+ * Represents a connection to a set of memcache servers.
+ * @link http://php.net/manual/en/class.memcache.php
+ */
 class Memcache extends MemcachePool  {
 
-	/**
-	 * (PECL memcache &gt;= 0.2.0)<br/>
-	 * Open memcached server connection
-	 * @link http://php.net/manual/en/function.memcache-connect.php
-	 * @param string $host <p>
-	 * Point to the host where memcached is listening for connections. This parameter
-	 * may also specify other transports like unix:///path/to/memcached.sock
-	 * to use UNIX domain sockets, in this case port must also
-	 * be set to 0.
-	 * </p>
-	 * @param int $port [optional] <p>
-	 * Point to the port where memcached is listening for connections. Set this
-	 * parameter to 0 when using UNIX domain sockets.
-	 * </p>
-	 * @param int $timeout [optional] <p>
-	 * Value in seconds which will be used for connecting to the daemon. Think
-	 * twice before changing the default value of 1 second - you can lose all
-	 * the advantages of caching if your connection is too slow.
-	 * </p>
-	 * @return bool Returns true on success or false on failure.
-	 */
-	public function connect ($host, $port = null, $timeout = null) {}
+    /**
+     * (PECL memcache &gt;= 0.2.0)<br/>
+     * Open memcached server connection
+     * @link http://php.net/manual/en/memcache.connect.php
+     * @param string $host <p>
+     * Point to the host where memcached is listening for connections. This parameter
+     * may also specify other transports like unix:///path/to/memcached.sock
+     * to use UNIX domain sockets, in this case <i>port</i> must also
+     * be set to 0.
+     * </p>
+     * @param int $port [optional] <p>
+     * Point to the port where memcached is listening for connections. Set this
+     * parameter to 0 when using UNIX domain sockets.
+     * </p>
+     * <p>
+     * Please note: <i>port</i> defaults to
+     * memcache.default_port
+     * if not specified. For this reason it is wise to specify the port
+     * explicitly in this method call.
+     * </p>
+     * @param int $timeout [optional] <p>
+     * Value in seconds which will be used for connecting to the daemon. Think
+     * twice before changing the default value of 1 second - you can lose all
+     * the advantages of caching if your connection is too slow.
+     * </p>
+     * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
+     */
+    public function connect ($host, $port = null, $timeout = null) {}
 
-	/**
-	 * (PECL memcache &gt;= 0.4.0)<br/>
-	 * Open memcached server persistent connection
-	 * @link http://php.net/manual/en/function.memcache-pconnect.php
-	 * @param string $host <p>
-	 * Point to the host where memcached is listening for connections. This parameter
-	 * may also specify other transports like unix:///path/to/memcached.sock
-	 * to use UNIX domain sockets, in this case port must also
-	 * be set to 0.
-	 * </p>
-	 * @param int $port [optional] <p>
-	 * Point to the port where memcached is listening for connections. Set this
-	 * parameter to 0 when using UNIX domain sockets.
-	 * </p>
-	 * @param int $timeout [optional] <p>
-	 * Value in seconds which will be used for connecting to the daemon. Think
-	 * twice before changing the default value of 1 second - you can lose all
-	 * the advantages of caching if your connection is too slow.
-	 * </p>
-	 * @return bool Returns true on success or false on failure.
-	 */
-	public function pconnect ($host, $port = null, $timeout = null) {}
+    /**
+     * (PECL memcache &gt;= 0.4.0)<br/>
+     * Open memcached server persistent connection
+     * @link http://php.net/manual/en/memcache.pconnect.php
+     * @param string $host <p>
+     * Point to the host where memcached is listening for connections. This parameter
+     * may also specify other transports like unix:///path/to/memcached.sock
+     * to use UNIX domain sockets, in this case <i>port</i> must also
+     * be set to 0.
+     * </p>
+     * @param int $port [optional] <p>
+     * Point to the port where memcached is listening for connections. Set this
+     * parameter to 0 when using UNIX domain sockets.
+     * </p>
+     * @param int $timeout [optional] <p>
+     * Value in seconds which will be used for connecting to the daemon. Think
+     * twice before changing the default value of 1 second - you can lose all
+     * the advantages of caching if your connection is too slow.
+     * </p>
+     * @return mixed a Memcache object or <b>FALSE</b> on failure.
+     */
+    public function pconnect ($host, $port = null, $timeout = null) {}
 
-	/**
-	 * (PECL memcache &gt;= 2.0.0)<br/>
-	 * Add a memcached server to connection pool
-	 * @link http://php.net/manual/en/function.memcache-addserver.php
-	 * @param string $host <p>
-	 * Point to the host where memcached is listening for connections. This parameter
-	 * may also specify other transports like unix:///path/to/memcached.sock
-	 * to use UNIX domain sockets, in this case port must also
-	 * be set to 0.
-	 * </p>
-	 * @param int $port [optional] <p>
-	 * Point to the port where memcached is listening for connections.
-	 * Set this
-	 * parameter to 0 when using UNIX domain sockets.
-	 * </p>
-	 * @param bool $persistent [optional] <p>
-	 * Controls the use of a persistent connection. Default to true.
-	 * </p>
-	 * @param int $weight [optional] <p>
-	 * Number of buckets to create for this server which in turn control its
-	 * probability of it being selected. The probability is relative to the
-	 * total weight of all servers.
-	 * </p>
-	 * @param int $timeout [optional] <p>
-	 * Value in seconds which will be used for connecting to the daemon. Think
-	 * twice before changing the default value of 1 second - you can lose all
-	 * the advantages of caching if your connection is too slow.
-	 * </p>
-	 * @param int $retry_interval [optional] <p>
-	 * Controls how often a failed server will be retried, the default value
-	 * is 15 seconds. Setting this parameter to -1 disables automatic retry. 
-	 * Neither this nor the persistent parameter has any 
-	 * effect when the extension is loaded dynamically via dl.
-	 * </p>
-	 * <p>
-	 * Each failed connection struct has its own timeout and before it has expired 
-	 * the struct will be skipped when selecting backends to serve a request. Once 
-	 * expired the connection will be successfully reconnected or marked as failed 
-	 * for another retry_interval seconds. The typical 
-	 * effect is that each web server child will retry the connection about every
-	 * retry_interval seconds when serving a page.
-	 * </p>
-	 * @param bool $status [optional] <p>
-	 * Controls if the server should be flagged as online. Setting this parameter
-	 * to false and retry_interval to -1 allows a failed 
-	 * server to be kept in the pool so as not to affect the key distribution 
-	 * algorithm. Requests for this server will then failover or fail immediately 
-	 * depending on the memcache.allow_failover setting.
-	 * Default to true, meaning the server should be considered online.
-	 * </p>
-	 * @param callback $failure_callback [optional] <p>
-	 * Allows the user to specify a callback function to run upon encountering an 
-	 * error. The callback is run before failover is attempted. The function takes 
-	 * two parameters, the hostname and port of the failed server.
-	 * </p>
-	 * @param int $timeoutms [optional] <p>
-	 * </p>
-	 * @return bool Returns true on success or false on failure.
-	 */
-	public function addserver ($host, $port = null, $persistent = null, $weight = null, $timeout = null, $retry_interval = null, $status = null, $failure_callback = null, $timeoutms = null) {}
+    /**
+     * (PECL memcache &gt;= 2.0.0)<br/>
+     * Add a memcached server to connection pool
+     * @link http://php.net/manual/en/memcache.addserver.php
+     * @param string $host <p>
+     * Point to the host where memcached is listening for connections. This parameter
+     * may also specify other transports like unix:///path/to/memcached.sock
+     * to use UNIX domain sockets, in this case <i>port</i> must also
+     * be set to 0.
+     * </p>
+     * @param int $port [optional] <p>
+     * Point to the port where memcached is listening for connections.
+     * Set this
+     * parameter to 0 when using UNIX domain sockets.
+     * </p>
+     * <p>
+     * Please note: <i>port</i> defaults to
+     * memcache.default_port
+     * if not specified. For this reason it is wise to specify the port
+     * explicitly in this method call.
+     * </p>
+     * @param bool $persistent [optional] <p>
+     * Controls the use of a persistent connection. Default to <b>TRUE</b>.
+     * </p>
+     * @param int $weight [optional] <p>
+     * Number of buckets to create for this server which in turn control its
+     * probability of it being selected. The probability is relative to the
+     * total weight of all servers.
+     * </p>
+     * @param int $timeout [optional] <p>
+     * Value in seconds which will be used for connecting to the daemon. Think
+     * twice before changing the default value of 1 second - you can lose all
+     * the advantages of caching if your connection is too slow.
+     * </p>
+     * @param int $retry_interval [optional] <p>
+     * Controls how often a failed server will be retried, the default value
+     * is 15 seconds. Setting this parameter to -1 disables automatic retry.
+     * Neither this nor the <i>persistent</i> parameter has any
+     * effect when the extension is loaded dynamically via <b>dl</b>.
+     * </p>
+     * <p>
+     * Each failed connection struct has its own timeout and before it has expired
+     * the struct will be skipped when selecting backends to serve a request. Once
+     * expired the connection will be successfully reconnected or marked as failed
+     * for another <i>retry_interval</i> seconds. The typical
+     * effect is that each web server child will retry the connection about every
+     * <i>retry_interval</i> seconds when serving a page.
+     * </p>
+     * @param bool $status [optional] <p>
+     * Controls if the server should be flagged as online. Setting this parameter
+     * to <b>FALSE</b> and <i>retry_interval</i> to -1 allows a failed
+     * server to be kept in the pool so as not to affect the key distribution
+     * algorithm. Requests for this server will then failover or fail immediately
+     * depending on the <i>memcache.allow_failover</i> setting.
+     * Default to <b>TRUE</b>, meaning the server should be considered online.
+     * </p>
+     * @param callable $failure_callback [optional] <p>
+     * Allows the user to specify a callback function to run upon encountering an
+     * error. The callback is run before failover is attempted. The function takes
+     * two parameters, the hostname and port of the failed server.
+     * </p>
+     * @param int $timeoutms [optional] <p>
+     * </p>
+     * @return bool <b>TRUE</b> on success or <b>FALSE</b> on failure.
+     */
+    public function addserver ($host, $port = 11211, $persistent = null, $weight = null, $timeout = null, $retry_interval = null, $status = null, callable $failure_callback = null, $timeoutms = null) {}
 
-	public function setserverparams () {}
+    /**
+     * Changes server parameters and status at runtime
+     * @param string $host Point to the host where memcached is listening for connections.
+     * @param int $port [optional] Point to the port where memcached is listening for connections.
+     * @param int $timeout [optional] Value in seconds which will be used for connecting to the daemon.
+     * Think twice before changing the default value of 1 second -
+     * you can lose all the advantages of caching if your connection is too slow.
+     * @param int $retry_interval [optional] Controls how often a failed server will be retried, the default value is 15 seconds.
+     * Setting this parameter to -1 disables automatic retry. Neither this nor the persistent parameter has any effect
+     * when the extension is loaded dynamically via dl().
+     * @param bool $status [optional] Controls if the server should be flagged as online.
+     * Setting this parameter to FALSE and retry_interval to -1 allows a failed server to be kept in the pool so as not
+     * to affect the key distribution algorithm. Requests for this server will then failover or fail immediately
+     * depending on the memcache.allow_failover setting. Default to TRUE, meaning the server should be considered online.
+     * @param callable $failure_callback [optional] Allows the user to specify a callback function to run upon encountering an
+     * error. The callback is run before failover is attempted. The function takes two parameters, the hostname and port
+     * of the failed server.
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.setserverparams.php
+     */
+    public function setserverparams ($host, $port = 11211, $timeout, $retry_interval = false, $status, $failure_callback) {}
 
-	public function setfailurecallback () {}
+    public function setfailurecallback () {}
 
-	public function getserverstatus () {}
+    /**
+     * Returns server status
+     * @param string $host Point to the host where memcached is listening for connections.
+     * @param int $port [optional] Point to the port where memcached is listening for connections.
+     * @return int Returns a the servers status. 0 if server is failed, non-zero otherwise
+     * @link http://www.php.net/manual/en/memcache.getserverstatus.php
+     */
+    public function getserverstatus ($host, $port = 11211) {}
 
-	public function getversion () {}
+    public function findserver () {}
 
-	public function add () {}
+    /**
+     * Return version of the server
+     * @return string|bool Returns a string of server version number or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.getversion.php
+     */
+    public function getversion () {}
 
-	public function set () {}
+    /**
+     * Stores variable var with key only if such key doesn't exist at the server yet. Also you can use memcache_add() function.
+     * @param string $key The key that will be associated with the item.
+     * @param mixed $var The variable to store. Strings and integers are stored as is, other types are stored serialized.
+     * @param int $flag [optional] Use MEMCACHE_COMPRESSED to store the item compressed (uses zlib).
+     * @param int $expire [optional] Expiration time of the item. If it's equal to zero, the item will never expire.
+     * You can also use Unix timestamp or a number of seconds starting from current time,
+     * but in the latter case the number of seconds may not exceed 2592000 (30 days).
+     * @return bool Returns TRUE on success or FALSE on failure. Returns FALSE if such key already exist.
+     * For the rest Memcache::add() behaves similarly to Memcache::set().
+     * @link http://www.php.net/manual/en/memcache.add.php
+     */
+    public function add ($key, $var, $flag, $expire ) {}
 
-	public function replace () {}
+    /**
+     * Stores an item var with key on the memcached server. Parameter expire is expiration time in seconds.
+     * If it's 0, the item never expires (but memcached server doesn't guarantee this item to be stored all the time,
+     * it could be deleted from the cache to make place for other items).
+     * You can use MEMCACHE_COMPRESSED constant as flag value if you want to use on-the-fly compression (uses zlib).
+     * @param string $key The key that will be associated with the item.
+     * @param mixed $var The variable to store. Strings and integers are stored as is, other types are stored serialized.
+     * @param int $flag [optional] Use MEMCACHE_COMPRESSED to store the item compressed (uses zlib).
+     * @param int $expire [optional] Expiration time of the item. If it's equal to zero, the item will never expire.
+     * You can also use Unix timestamp or a number of seconds starting from current time,
+     * but in the latter case the number of seconds may not exceed 2592000 (30 days).
+     * @return bool Returns TRUE on success or FALSE on failure. Returns FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.set.php
+     */
+    public function set ($key, $var, $flag, $expire) {}
 
-	public function cas () {}
+    /**
+     * Replace value of the existing item
+     * @param string $key The key that will be associated with the item.
+     * @param mixed $var The variable to store. Strings and integers are stored as is, other types are stored serialized.
+     * @param int $flag [optional] Use MEMCACHE_COMPRESSED to store the item compressed (uses zlib).
+     * @param int $expire Expiration time of the item. If it's equal to zero, the item will never expire.
+     * You can also use Unix timestamp or a number of seconds starting from current time,
+     * but in the latter case the number of seconds may not exceed 2592000 (30 days).
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.replace.php
+     */
+    public function replace ($key, $var, $flag, $expire) {}
 
-	public function append () {}
+    public function cas () {}
 
-	public function prepend () {}
+    public function append () {}
 
-	public function get () {}
+    public function prepend () {}
 
-	public function delete () {}
+    /**
+     * Retrieve item from the server
+     * @link http://www.php.net/manual/en/memcache.get.php
+     * @param string $key The key or array of keys to fetch.
+     * @param int $flags If present, flags fetched along with the values will be written to this parameter.
+     * These flags are the same as the ones given to for example Memcache::set().
+     * The lowest byte of the int is reserved for pecl/memcache internal usage (e.g. to indicate compression and serialization status).
+     * @return string|array associated with the key or FALSE on failure or if such key was not found.
+     */
+    public function get ($key, &$flags = null ) {}
 
-	public function getstats () {}
+    /**
+     * Delete item from the server
+     * @param string $key The key associated with the item to delete.
+     * @param int $timeout [optional] This deprecated parameter is not supported, and defaults to 0 seconds.
+     * Do not use this parameter.
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.delete.php
+     */
+    public function delete ($key, $timeout = 0) {}
 
-	public function getextendedstats () {}
+    /**
+     * Get statistics of the server
+     * @param string [optional] $type The type of statistics to fetch. Valid values are {reset, malloc, maps, cachedump, slabs, items, sizes}.
+     * According to the memcached protocol spec these additional arguments "are subject to change for the convenience of memcache developers".
+     * @param int [optional] $slabid Used in conjunction with type set to cachedump to identify the slab to dump from.
+     * The cachedump command ties up the server and is strictly to be used for debugging purposes.
+     * @param int [optional] $limit Used in conjunction with type set to cachedump to limit the number of entries to dump.
+     * @return array|bool Returns an associative array of server statistics or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.getstats.php
+     */
+    public function getstats ($type, $slabid, $limit = 100) {}
 
-	public function setcompressthreshold () {}
+    /**
+     * Get statistics from all servers in pool
+     * @param string $type [optional] The type of statistics to fetch. Valid values are {reset, malloc, maps, cachedump, slabs, items, sizes}.
+     * According to the memcached protocol spec these additional arguments "are subject to change for the convenience of memcache developers".
+     * @param int $slabid [optional] Used in conjunction with type set to cachedump to identify the slab to dump from.
+     * The cachedump command ties up the server and is strictly to be used for debugging purposes.
+     * @param int $limit [optional] Used in conjunction with type set to cachedump to limit the number of entries to dump.
+     * @return array|bool Returns a two-dimensional associative array of server statistics or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.getextendedstats.php
+     */
+    public function getextendedstats ($type, $slabid, $limit = 100) {}
 
-	public function increment () {}
+    /**
+     * Enable automatic compression of large values
+     * @param int $threshold Controls the minimum value length before attempting to compress automatically.
+     * @param float $min_savings [optional] Specifies the minimum amount of savings to actually store the value compressed.
+     * The supplied value must be between 0 and 1. Default value is 0.2 giving a minimum 20% compression savings.
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.setcompressthreshold.php
+     */
+    public function setcompressthreshold ($threshold, $min_savings) {}
 
-	public function decrement () {}
+    /**
+     * Increment item's value
+     * @param string $key Key of the item to increment.
+     * @param int $value [optional] Increment the item by value.
+     * @return mixed Returns new items value on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.increment.php
+     */
+    public function increment ($key, $value = 1) {}
 
-	public function close () {}
+    /**
+     * Decrement item's value
+     * @param string $key Key of the item do decrement.
+     * @param int $value [optional] Decrement the item by value.
+     * @return mixed Returns item's new value on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.decrement.php
+     */
+    public function decrement ($key, $value = 1 ) {}
 
-	public function flush () {}
+    /**
+     * Close memcached server connection
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.close.php
+     */
+    public function close () {}
+
+    /**
+     * Flush all existing items at the server
+     * @return bool Returns TRUE on success or FALSE on failure.
+     * @link http://www.php.net/manual/en/memcache.flush.php
+     */
+    public function flush () {}
 
 }
 
@@ -232,11 +390,11 @@ function memcache_delete () {}
  * Turn debug output on/off
  * @link http://php.net/manual/en/function.memcache-debug.php
  * @param bool $on_off <p>
- * Turns debug output on if equals to true.
- * Turns debug output off if equals to false.
+ * Turns debug output on if equals to <b>TRUE</b>.
+ * Turns debug output off if equals to <b>FALSE</b>.
  * </p>
- * @return bool true if PHP was built with --enable-debug option, otherwise
- * returns false.
+ * @return bool <b>TRUE</b> if PHP was built with --enable-debug option, otherwise
+ * returns <b>FALSE</b>.
  */
 function memcache_debug ($on_off) {}
 
@@ -257,5 +415,5 @@ function memcache_flush () {}
 define ('MEMCACHE_COMPRESSED', 2);
 define ('MEMCACHE_HAVE_SESSION', 1);
 
-// End of memcache v.3.0.4
+// End of memcache v.3.0.6
 ?>

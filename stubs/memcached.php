@@ -172,6 +172,19 @@ class Memcached
 	{ }
 
 	/**
+	 * Decrement numeric item's value, stored on a specific server
+	 * @param string $server_key
+	 * @param string $key
+	 * @param int $offset [optional]
+	 * @param int $initial_value [optional]
+	 * @param int $expiry [optional]
+	 * @return mixed|boolean Returns item's new value on success or FALSE on failure.
+	 * @link http://www.php.net/manual/en/memcached.decrementbykey.php
+	 */
+	public function decrementByKey($server_key, $key, $offset = 1, $initial_value = 0, $expiry = 0)
+	{ }
+
+	/**
 	 * Delete an item
 	 * @param string $key
 	 * @param int $time
@@ -190,6 +203,27 @@ class Memcached
 	 * @link http://php.net/manual/en/memcached.deletebykey.php
 	 */
 	public function deleteByKey($server_key, $key, $time = 0)
+	{ }
+
+	/**
+	 * Delete multiple items
+	 * @param array $keys
+	 * @param int $time [optional]
+	 * @return boolean
+	 * @link http://us1.php.net/manual/en/memcached.deletemulti.php
+	 */
+	public function deleteMulti($keys, $time = 0)
+	{ }
+
+	/**
+	 * Delete multiple items from a specific server
+	 * @param string $server_key
+	 * @param array $keys
+	 * @param int $time [optional]
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.deletemultibykey.php
+	 */
+	public function deleteMultiByKey($server_key, $keys, $time = 0)
 	{ }
 
 	/**
@@ -226,6 +260,13 @@ class Memcached
 	 * @link http://php.net/manual/en/memcached.get.php
 	 */
 	public function get($key, $cache_cb = null, &$cas_token = null)
+	{ }
+
+	/**
+	 * Gets the keys stored on all the servers
+	 * @return array|boolean
+	 */
+	public function getAllKeys()
 	{ }
 
 	/**
@@ -355,6 +396,35 @@ class Memcached
 	{ }
 
 	/**
+	 * Increment numeric item's value, stored on a specific server
+	 * @param string $server_key
+	 * @param string $key
+	 * @param int $offset [optional]
+	 * @param int $initial_value [optional]
+	 * @param int $expiry [optional]
+	 * @return mixed|boolean
+	 * @link http://www.php.net/manual/en/memcached.incrementbykey.php
+	 */
+	public function incrementByKey($server_key, $key, $offset = 1, $initial_value = 0, $expiry = 0)
+	{ }
+
+	/**
+	 * Check if a persitent connection to memcache is being used
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.ispersistent.php
+	 */
+	public function isPersistent ()
+	{ }
+
+	/**
+	 * Check if the instance was recently created
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.ispristine.php
+	 */
+	public function isPristine ()
+	{ }
+
+	/**
 	 * Prepend data to an existing item
 	 * @param string $key
 	 * @param string $value
@@ -373,6 +443,14 @@ class Memcached
 	 * @link http://php.net/manual/en/memcached.prependbykey.php
 	 */
 	public function prependByKey($server_key, $key, $value)
+	{ }
+
+	/**
+	 * Close any open connections
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.quit.php
+	 */
+	public function quit()
 	{ }
 
 	/**
@@ -396,6 +474,14 @@ class Memcached
 	 * @link http://php.net/manual/en/memcached.replacebykey.php
 	 */
 	public function replaceByKey($server_key, $key, $value, $expiration = 0)
+	{ }
+
+	/**
+	 * Clears all servers from the server list
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.resetserverlist.php
+	 */
+	public function resetServerList()
 	{ }
 
 	/**
@@ -451,4 +537,41 @@ class Memcached
 	 */
 	public function setOption($option, $value)
 	{ }
+
+	/**
+	 * Set Memcached options
+	 * @param array $options
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.setoptions.php
+	 */
+	public function setOptions($options)
+	{ }
+
+	/**
+	 * Set the credentials to use for authentication
+	 * @param string $username
+	 * @param string $password
+	 * @link http://www.php.net/manual/en/memcached.setsaslauthdata.php
+	 */
+	public function setSaslAuthData($username, $password)
+	{ }
+
+	/**
+	 * Set a new expiration on an item
+	 * @param string $key
+	 * @param int $expiration
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.touch.php
+	 */
+	public function touch ($key, $expiration) {}
+
+	/**
+	 * Set a new expiration on an item on a specific server
+	 * @param string $server_key
+	 * @param string $key
+	 * @param int $expiration
+	 * @return boolean
+	 * @link http://www.php.net/manual/en/memcached.touchbykey.php
+	 */
+	public function touchByKey ($server_key, $key, $expiration) {}
 }
